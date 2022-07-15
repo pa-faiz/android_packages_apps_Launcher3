@@ -83,4 +83,10 @@
 
     <!-- LMOFreeform -->
     <string name="floating_window">Floating</string>
+
+    <!-- Background opacity -->
+    <string name="background_opacity_title">App drawer opacity</string>
+
+    <!-- Recents opacity -->
+    <string name="recents_opacity_title">Recents opacity</string>
 </resources>

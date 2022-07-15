@@ -69,6 +69,15 @@
             android:summary="@string/smartspace_pref_summary"
             android:defaultValue="true" />
 
+        <co.aospa.framework.preference.CustomSeekBarPreference
+            android:key="pref_app_drawer_opacity"
+            android:title="@string/background_opacity_title"
+            android:persistent="true"
+            android:max="100"
+            android:min="0"
+            settings:units="%"
+            android:defaultValue="80" />
+
         <SwitchPreference
             android:key="pref_dock_search"
             android:title="@string/dock_search_title"
@@ -143,6 +152,15 @@
     <androidx.preference.PreferenceCategory
         android:key="recents_category"
         android:title="@string/category_recents">
+
+        <co.aospa.framework.preference.CustomSeekBarPreference
+            android:key="pref_recents_opacity"
+            android:title="@string/recents_opacity_title"
+            android:persistent="true"
+            android:max="100"
+            android:min="0"
+            settings:units="%"
+            android:defaultValue="40" />
 
         <SwitchPreference
             android:key="pref_recents_screenshot"
