@@ -78,6 +78,16 @@
             settings:units="%"
             android:defaultValue="80" />
 
+        <co.aospa.framework.preference.CustomSeekBarPreference
+            android:key="pref_blur_depth"
+            android:title="@string/background_blur_title"
+            android:summary="@string/background_blur_summary"
+            android:persistent="true"
+            android:max="175"
+            android:min="0"
+            settings:units="px"
+            android:defaultValue="23" />
+
         <SwitchPreference
             android:key="pref_dock_search"
             android:title="@string/dock_search_title"

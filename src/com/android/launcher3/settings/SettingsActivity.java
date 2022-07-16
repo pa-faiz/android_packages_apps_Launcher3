@@ -23,6 +23,7 @@ import static com.android.launcher3.config.FeatureFlags.IS_STUDIO_BUILD;
 import static com.android.launcher3.Utilities.KEY_DOCK_SEARCH;
 import static com.android.launcher3.Utilities.KEY_DT_GESTURE;
 import static com.android.launcher3.Utilities.KEY_SMARTSPACE;
+import static com.android.launcher3.Utilities.KEY_BLUR_DEPTH;
 import static com.android.launcher3.states.RotationHelper.ALLOW_ROTATION_PREFERENCE_KEY;
 
 import static co.aospa.launcher.OverlayCallbackImpl.KEY_ENABLE_MINUS_ONE;
@@ -66,6 +67,7 @@ import com.android.launcher3.states.RotationHelper;
 import com.android.launcher3.uioverrides.flags.DeveloperOptionsFragment;
 import com.android.launcher3.uioverrides.plugins.PluginManagerWrapper;
 import com.android.launcher3.util.DisplayController;
+import com.android.systemui.shared.system.BlurUtils;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
@@ -157,6 +159,8 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
         switch (key) {
             case KEY_DOCK_SEARCH:
             case KEY_SMARTSPACE:
+                LauncherAppState.getInstanceNoCreate().setNeedsRestart();
+            case KEY_BLUR_DEPTH:
                 LauncherAppState.getInstanceNoCreate().setNeedsRestart();
                 break;
             case KEY_DT_GESTURE:
@@ -344,6 +348,9 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                 case KEY_SUGGESTIONS:
                     preference.setEnabled(isAsiEnabled());
                     return true;
+
+                case KEY_BLUR_DEPTH:
+                    return BlurUtils.supportsBlursOnWindows();
             }
 
             return true;
