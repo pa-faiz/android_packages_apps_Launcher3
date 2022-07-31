@@ -301,7 +301,7 @@ public class QsbContainerView extends FrameLayout implements SharedPreferences.O
     }
 
     public boolean isQsbEnabled() {
-        return Utilities.isQSBEnabled(getContext());
+        return Utilities.isQSBEnabled(getContext()) && Utilities.showSmartspace(getContext());
     }
 
     protected Bundle createBindOptions() {

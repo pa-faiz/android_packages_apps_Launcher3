@@ -413,6 +413,7 @@ public class Launcher extends StatefulActivity<LauncherState>
     private final CannedAnimationCoordinator mAnimationCoordinator =
             new CannedAnimationCoordinator(this);
 
+    private boolean mSmartspaceEnabled;
     private final List<BackPressHandler> mBackPressedHandlers = new ArrayList<>();
     private boolean mIsColdStartupAfterReboot;
 
@@ -533,6 +534,8 @@ public class Launcher extends StatefulActivity<LauncherState>
         mAppWidgetHolder.addProviderChangeListener(() -> refreshAndBindWidgetsForPackageUser(null));
         mItemInflater = new ItemInflater<>(this, mAppWidgetHolder, getItemOnClickListener(),
                 mFocusHandler, new CellLayout(mWorkspace.getContext(), mWorkspace));
+
+        mSmartspaceEnabled = Utilities.showSmartspace(this);
 
         mPopupDataProvider = new PopupDataProvider(this::updateNotificationDots);
 
@@ -2234,6 +2237,7 @@ public class Launcher extends StatefulActivity<LauncherState>
 
     @Override
     public void bindScreens(IntArray orderedScreenIds) {
+        mModelCallbacks.setSmartSpaceEnabled(mSmartspaceEnabled);
         mModelCallbacks.bindScreens(orderedScreenIds);
     }
 
