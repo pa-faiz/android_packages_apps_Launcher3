@@ -76,6 +76,13 @@
             android:summary="@string/pref_allow_cts_summary"
             android:defaultValue="@*android:bool/config_searchAllEntrypointsEnabledDefault" />
 
+        <SwitchPreferenceCompat
+            android:key="pref_smartspace"
+            android:title="@string/smartspace_pref_title"
+            android:summary="@string/smartspace_pref_summary"
+            android:defaultValue="true"
+            launcher:iconSpaceReserved="false" />
+
         <Preference
             android:key="pref_suggestions"
             android:title="@string/suggestion_screen_title"
