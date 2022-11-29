@@ -163,6 +163,9 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
             case KEY_BLUR_DEPTH:
                 LauncherAppState.getInstanceNoCreate().setNeedsRestart();
                 break;
+            case Utilities.KEY_DRAWER_SEARCH:
+                LauncherAppState.getInstanceNoCreate().setNeedsRestart();
+                break;
             case KEY_DT_GESTURE:
                 Settings.System.putIntForUser(getContentResolver(),
                         Settings.System.DOUBLE_TAP_SLEEP_GESTURE,
