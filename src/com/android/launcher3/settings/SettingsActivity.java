@@ -161,7 +161,7 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                 break;
             case KEY_DT_GESTURE:
                 Settings.System.putIntForUser(getContentResolver(),
-                        Settings.System.GESTURE_DOUBLE_TAP_SLEEP,
+                        Settings.System.DOUBLE_TAP_SLEEP_GESTURE,
                         sharedPreferences.getBoolean(key, true) ? 1 : 0,
                         UserHandle.USER_CURRENT);
                 break;
